@@ -6,11 +6,11 @@ from interrupt_handler import __version__
 def main():
     # Read Description form file
     try:
-        with open('README.md') as f:
+        with open('README.rst') as f:
             description = f.read()
     except:
         print('Cannot find README.md file.', file=sys.stderr)
-        description = ""
+        description = "Interrupt Handling Utility for Python."
 
     setup(
       name='InterruptHandler',
