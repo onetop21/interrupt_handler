@@ -8,7 +8,7 @@ if __name__ == '__main__':
     with InterruptHandler(default_callback('Locked', True)) as h1:
         while not h1.interrupted:
             print(f'MainLoop {time.time()}, {h1}, {h1.interrupted}')
-            with InterruptHandler(default_callback('Message2')) as h2:
+            with InterruptHandler(default_callback('Message2'), propagate=True) as h2:
                 while sub_loop:
                     print(f'SubLoop {time.time()}')
                     time.sleep(1)

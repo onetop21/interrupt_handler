@@ -4,11 +4,12 @@ import signal
 from .default_callback import default_callback
 
 class InterruptHandler(object):
-    def __init__(self, callback=default_callback(), sig=signal.SIGINT):
+    def __init__(self, callback=default_callback(), sig=signal.SIGINT, propagate=False):
         if not callable(callback):
             raise ValueError(f'callback parameter is not support {type(callback)}.')
         self.callback = callback
         self.sig = sig
+        self.propagate = propagate
         self.original_handler = None
 
     @property
@@ -37,6 +38,8 @@ class InterruptHandler(object):
 
     def release(self, interrupted=False):
         if self.released:
+            if self.propagate:
+                os.kill(os.getpid(), self.sig)
             return True
         if self.original_handler:
             signal.signal(self.sig, self.original_handler)
