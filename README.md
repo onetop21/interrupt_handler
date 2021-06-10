@@ -22,9 +22,9 @@ with InterruptHandler(lambda: True) as h:
 ```
   
 ### Callback customize
-#### return True
-> Escape 'with statement' forcley.
 #### return False
+> Escape 'with statement' forcley.
+#### return True
 > Switch 'interrupted flag'.
 ``` python
 def callback():
