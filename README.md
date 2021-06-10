@@ -19,6 +19,12 @@ with InterruptHandler(lambda: True) as h:
   if h.interrupted:
     break
   ...
+  
+ 
+# Propagate signal to parent.
+with InterruptHandler():
+  with InterruptHandler(propagate=True):
+    ...
 ```
   
 ### Callback customize
