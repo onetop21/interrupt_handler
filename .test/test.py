@@ -5,7 +5,7 @@ if __name__ == '__main__':
     import time
     main_loop = True
     sub_loop = True
-    with InterruptHandler(default_callback('Locked', True)) as h1:
+    with InterruptHandler(default_callback('Locked', True), propagate=True) as h1:
         while not h1.interrupted:
             print(f'MainLoop {time.time()}, {h1}, {h1.interrupted}')
             with InterruptHandler(default_callback('Message2'), propagate=True) as h2:
