@@ -6,7 +6,7 @@ Interrupt Handling Util for Python.
 Installation
 ==============
 
-$ pip install interrupt_handler
+$ pip install InterruptHandler
 
 
 How To Use
