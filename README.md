@@ -3,7 +3,7 @@ Interrupt Handling Util for Python.
 
 ## Installation
 ```bash
-$ pip install interrupt_handler
+$ pip install InterruptHandler
 ```
 
 ## How to Use
