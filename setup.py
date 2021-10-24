@@ -21,7 +21,7 @@ def main():
       author_email='onetop21@gmail.com',
       license='MIT License',
       packages=find_packages(exclude=['.temp', '.test']),
-      url='https://github.com/onetop21/InterruptHandler.git',
+      url='https://github.com/onetop21/interrupt_handler.git',
       zip_safe=False,
       python_requires='>=3.0',
       install_requires=[],
